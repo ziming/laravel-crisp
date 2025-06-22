@@ -236,7 +236,7 @@ readonly class WebsitePeople
     }
 
     /**
-     * Extra bonus method to get the first people ID by search text.
+     * Bonus Method
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -248,5 +248,14 @@ readonly class WebsitePeople
         );
 
         return $people[0]['people_id'] ?? null;
+    }
+
+    /**
+     * Bonus Method
+     * Get the profile link for a given people ID.
+     */
+    public static function getProfileLink(string $peopleId): string
+    {
+        return 'https://app.crisp.chat/website/'.config('crisp.website_id')."/contacts/profile/{$peopleId}";
     }
 }
