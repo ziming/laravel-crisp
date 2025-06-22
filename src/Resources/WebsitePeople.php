@@ -239,7 +239,7 @@ readonly class WebsitePeople
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function getFirstPeopleIdBySearch(string $searchText): ?string
+    public function getFirstPeopleIdBySearchText(string $searchText): ?string
     {
         $people = $this->client->websitePeople->findWithSearchText(
             config('crisp.website_id'),
