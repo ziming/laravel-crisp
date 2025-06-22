@@ -38,7 +38,6 @@ return [
 ## Usage
 
 ```php
-use Z
 $laravelCrisp = new Ziming\LaravelCrisp();
 ```
 
