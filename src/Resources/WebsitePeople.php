@@ -60,6 +60,10 @@ readonly class WebsitePeople
         );
     }
 
+    /**
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
     public function getPeopleProfile(string $peopleId): array
     {
         return $this->client->websitePeople->getPeopleProfile(
