@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Ziming\LaravelCrisp;
 
 use Crisp\CrispClient;
+use Crisp\CrispException;
+use Psr\Http\Client\ClientExceptionInterface;
+use Ziming\LaravelCrisp\Resources\WebsitePeople;
 
 class LaravelCrisp
 {
@@ -14,6 +17,8 @@ class LaravelCrisp
         }
     }
 
+    public WebsitePeople $websitePeople;
+
     public function __construct()
     {
         $this->client = new CrispClient;
@@ -22,5 +27,12 @@ class LaravelCrisp
             config('crisp.access_identifier'),
             config('crisp.secret_key')
         );
+
+        $this->websitePeople = new WebsitePeople($this->client);
+    }
+
+    public static function getProfileLink(string $peopleId): string
+    {
+        return 'https://app.crisp.chat/website/'.config('crisp.website_id')."/contacts/profile/{$peopleId}";
     }
 }
