@@ -19,8 +19,8 @@ class LaravelCrisp
         $this->crispClient = new CrispClient;
         $this->crispClient->setTier('plugin');
         $this->crispClient->authenticate(
-            config('laravel-crisp.access_identifier'),
-            config('laravel-crisp.secret_key')
+            config('crisp.access_identifier'),
+            config('crisp.secret_key')
         );
     }
 }
