@@ -8,17 +8,17 @@ use Crisp\CrispClient;
 
 class LaravelCrisp
 {
-    public CrispClient $crispClient {
+    public CrispClient $client {
         get {
-            return $this->crispClient;
+            return $this->client;
         }
     }
 
     public function __construct()
     {
-        $this->crispClient = new CrispClient;
-        $this->crispClient->setTier('plugin');
-        $this->crispClient->authenticate(
+        $this->client = new CrispClient;
+        $this->client->setTier('plugin');
+        $this->client->authenticate(
             config('crisp.access_identifier'),
             config('crisp.secret_key')
         );
