@@ -6,8 +6,8 @@ namespace Ziming\LaravelCrisp;
 
 use Crisp\CrispClient;
 
-class LaravelCrisp {
-
+class LaravelCrisp
+{
     private CrispClient $crispClient {
         get {
             return $this->crispClient;
@@ -16,12 +16,11 @@ class LaravelCrisp {
 
     public function __construct()
     {
-        $this->crispClient = new CrispClient();
+        $this->crispClient = new CrispClient;
         $this->crispClient->setTier('plugin');
         $this->crispClient->authenticate(
             config('laravel-crisp.access_identifier'),
             config('laravel-crisp.secret_key')
         );
     }
-
 }
