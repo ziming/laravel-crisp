@@ -8,7 +8,7 @@ use Crisp\CrispClient;
 
 class LaravelCrisp
 {
-    private CrispClient $crispClient {
+    public CrispClient $crispClient {
         get {
             return $this->crispClient;
         }
