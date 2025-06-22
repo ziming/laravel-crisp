@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-crisp/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ziming/laravel-crisp/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-crisp.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-crisp)
 
-Just a simple wrapper for crisp php library for now
+Just a simple wrapper for crisp php library for now. More documentation will be added later.
 
 ## Support us
 
@@ -30,15 +30,21 @@ This is the contents of the published config file:
 ```php
 return [
     'website_id' => env('CRISP_WEBSITE_ID'),
-    'access_identifier' => env('CRISP_ACCESS_IDENTIFIER'),
-    'secret_key' => env('CRISP_SECRET_KEY'),
+    'access_key_id' => env('CRISP_ACCESS_KEY_ID'),
+    'secret_access_key' => env('CRISP_SECRET_ACCESS_KEY'),
 ];
 ```
 
 ## Usage
 
 ```php
-$laravelCrisp = new Ziming\LaravelCrisp();
+$crisp = new Ziming\LaravelCrisp();
+
+// Notice you don't have to pass in the website_id every time.
+$crisp->websitePeople->findByEmail('abc@example.com');
+
+// Alternatively you can use the crisp php api sdk but that would need you to pass in the website_id every time
+$crisp->client->websitePeople->findByEmail('crisp-website-id', 'abc@example.com');
 ```
 
 ## Testing

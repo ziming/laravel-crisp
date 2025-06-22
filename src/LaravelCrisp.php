@@ -46,10 +46,10 @@ class LaravelCrisp
     public function __construct()
     {
         $this->client = new CrispClient;
-        $this->client->setTier('plugin');
+        $this->client->setTier(config('crisp.tier'));
         $this->client->authenticate(
-            config('crisp.access_identifier'),
-            config('crisp.secret_key')
+            config('crisp.access_key_id'),
+            config('crisp.secret_access_key')
         );
 
         // Initialize all resource classes
