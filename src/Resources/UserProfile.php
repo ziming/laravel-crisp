@@ -10,9 +10,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 readonly class UserProfile
 {
-    public function __construct(private CrispClient $client)
-    {
-    }
+    public function __construct(private CrispClient $client) {}
 
     /**
      * @throws CrispException
@@ -26,8 +24,8 @@ readonly class UserProfile
     /**
      * Update the current user's profile
      *
-     * @param array $params Profile data to update
-     * @return array
+     * @param  array  $params  Profile data to update
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

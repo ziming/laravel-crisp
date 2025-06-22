@@ -235,6 +235,7 @@ readonly class WebsitePeople
     /**
      * Bonus Method
      * Get the first people ID by search text.
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

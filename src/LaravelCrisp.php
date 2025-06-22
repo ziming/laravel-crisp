@@ -5,19 +5,17 @@ declare(strict_types=1);
 namespace Ziming\LaravelCrisp;
 
 use Crisp\CrispClient;
-use Ziming\LaravelCrisp\Resources\{
-    Buckets,
-    PluginSubscriptions,
-    UserProfile,
-    Website,
-    WebsiteAvailability,
-    WebsiteConversations,
-    WebsiteOperators,
-    WebsitePeople,
-    WebsiteSettings,
-    WebsiteVerify,
-    WebsiteVisitors
-};
+use Ziming\LaravelCrisp\Resources\Buckets;
+use Ziming\LaravelCrisp\Resources\PluginSubscriptions;
+use Ziming\LaravelCrisp\Resources\UserProfile;
+use Ziming\LaravelCrisp\Resources\Website;
+use Ziming\LaravelCrisp\Resources\WebsiteAvailability;
+use Ziming\LaravelCrisp\Resources\WebsiteConversations;
+use Ziming\LaravelCrisp\Resources\WebsiteOperators;
+use Ziming\LaravelCrisp\Resources\WebsitePeople;
+use Ziming\LaravelCrisp\Resources\WebsiteSettings;
+use Ziming\LaravelCrisp\Resources\WebsiteVerify;
+use Ziming\LaravelCrisp\Resources\WebsiteVisitors;
 
 class LaravelCrisp
 {

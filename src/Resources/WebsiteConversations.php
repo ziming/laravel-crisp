@@ -10,9 +10,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 readonly class WebsiteConversations
 {
-    public function __construct(private CrispClient $client)
-    {
-    }
+    public function __construct(private CrispClient $client) {}
 
     /**
      * @throws CrispException
@@ -78,8 +76,6 @@ readonly class WebsiteConversations
     /**
      * Delete a conversation
      *
-     * @param string $sessionId
-     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -94,8 +90,6 @@ readonly class WebsiteConversations
     /**
      * Initiate a conversation
      *
-     * @param string $sessionId
-     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -110,9 +104,6 @@ readonly class WebsiteConversations
     /**
      * Get messages from a conversation
      *
-     * @param string $sessionId
-     * @param string $timestampBefore
-     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -128,9 +119,6 @@ readonly class WebsiteConversations
     /**
      * Send a message in a conversation
      *
-     * @param string $sessionId
-     * @param array $message
-     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -146,9 +134,6 @@ readonly class WebsiteConversations
     /**
      * Acknowledge messages in a conversation
      *
-     * @param string $sessionId
-     * @param array $read
-     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -164,8 +149,6 @@ readonly class WebsiteConversations
     /**
      * Get routing for a conversation
      *
-     * @param string $sessionId
-     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -231,9 +214,8 @@ readonly class WebsiteConversations
     /**
      * Set the state of a conversation
      *
-     * @param string $sessionId
-     * @param string $state Must be one of: 'pending', 'unresolved', 'resolved'
-     * @return array
+     * @param  string  $state  Must be one of: 'pending', 'unresolved', 'resolved'
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

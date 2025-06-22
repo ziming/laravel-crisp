@@ -10,9 +10,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 readonly class WebsiteAvailability
 {
-    public function __construct(private CrispClient $client)
-    {
-    }
+    public function __construct(private CrispClient $client) {}
 
     /**
      * @throws CrispException
