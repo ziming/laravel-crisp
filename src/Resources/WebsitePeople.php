@@ -7,13 +7,10 @@ namespace Ziming\LaravelCrisp\Resources;
 use Crisp\CrispClient;
 use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
-use Ziming\LaravelCrisp\LaravelCrisp;
 
 readonly class WebsitePeople
 {
-    public function __construct(private CrispClient $client)
-    {
-    }
+    public function __construct(private CrispClient $client) {}
 
     /**
      * @throws CrispException
@@ -237,6 +234,7 @@ readonly class WebsitePeople
 
     /**
      * Bonus Method
+     * Get the first people ID by search text.
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

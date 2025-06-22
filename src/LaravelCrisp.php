@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Ziming\LaravelCrisp;
 
 use Crisp\CrispClient;
-use Crisp\CrispException;
-use Psr\Http\Client\ClientExceptionInterface;
 use Ziming\LaravelCrisp\Resources\{
     Buckets,
     PluginSubscriptions,
