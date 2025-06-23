@@ -76,7 +76,7 @@ readonly class WebsitePeople
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function listPeopleProfiles(int $pageNumber): array
+    public function listPeopleProfiles(int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleProfiles(
             config('crisp.website_id'),
@@ -126,7 +126,7 @@ readonly class WebsitePeople
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function listPeopleSegments(int $pageNumber): array
+    public function listPeopleSegments(int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleSegments(
             config('crisp.website_id'),
@@ -138,7 +138,7 @@ readonly class WebsitePeople
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function listPeopleConversations(string $peopleId, int $pageNumber): array
+    public function listPeopleConversations(string $peopleId, int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleConversations(
             config('crisp.website_id'),
@@ -164,7 +164,7 @@ readonly class WebsitePeople
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function listPeopleEvents(string $peopleId, int $pageNumber): array
+    public function listPeopleEvents(string $peopleId, int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleEvent(
             config('crisp.website_id'),
