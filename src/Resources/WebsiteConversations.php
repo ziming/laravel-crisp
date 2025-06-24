@@ -268,7 +268,7 @@ readonly class WebsiteConversations
             $sessionId
         );
 
-        return $getOneResponse['data']['last_message'];
+        return $getOneResponse['last_message'];
     }
 
     /**
