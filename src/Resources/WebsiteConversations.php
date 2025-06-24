@@ -257,6 +257,7 @@ readonly class WebsiteConversations
     /**
      * Bonus Method
      * Get the last message of a conversation. Which could be from operator or user
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
