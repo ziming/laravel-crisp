@@ -261,7 +261,7 @@ readonly class WebsiteConversations
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function getOneLastMessage(string $sessionId): array
+    public function getOneLastMessage(string $sessionId): string
     {
         $getOneResponse = $this->client->websiteConversations->getOne(
             config('crisp.website_id'),
