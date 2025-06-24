@@ -261,6 +261,7 @@ readonly class WebsiteConversations
     public static function getConversationLink(string $sessionId): string
     {
         $websiteId = config('crisp.website_id');
+
         return "https://app.crisp.chat/website/{$websiteId}/inbox/{$sessionId}/";
     }
 }
