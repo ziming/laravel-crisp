@@ -256,6 +256,22 @@ readonly class WebsiteConversations
 
     /**
      * Bonus Method
+     * Get the last message of a conversation. Which could be from operator or user
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
+    public function getOneLastMessage(string $sessionId): array
+    {
+        $getOneResponse = $this->client->websiteConversations->getOne(
+            config('crisp.website_id'),
+            $sessionId
+        );
+
+        return $getOneResponse['data']['last_message'];
+    }
+
+    /**
+     * Bonus Method
      * Get the conversation link for a given session.
      */
     public static function getConversationLink(string $sessionId): string
