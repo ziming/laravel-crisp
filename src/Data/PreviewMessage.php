@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Ziming\LaravelCrisp\Data;
 
-use Carbon\CarbonImmutable;
 use Spatie\LaravelData\Data;
 
 /**

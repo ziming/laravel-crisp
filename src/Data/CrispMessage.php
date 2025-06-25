@@ -23,7 +23,7 @@ final class CrispMessage extends Data
         /**
          * Message content (string if type is text or note, object if type is file, animation, audio, picker, field,
          * carousel or event)
-        */
+         */
         public readonly string|array $content,
 
         public readonly array $preview,
