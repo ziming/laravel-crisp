@@ -24,7 +24,7 @@ class CrispConversation extends Data
         public string $availability,
         public array $active, // object
         public string $last_message,
-        public ?string $preview_message,
+        public ?array $preview_message, // object
         public array $mentions,
         public array $participants,
         public int $updated_at, // Not sure how to get it to work with CarbonImmutable so using int for now
