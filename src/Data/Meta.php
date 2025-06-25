@@ -20,6 +20,6 @@ final class Meta extends Data
         public readonly array $data,
         public readonly ?string $avatar,
         public readonly Device $device,
-
+        public readonly array $segments,
     ) {}
 }

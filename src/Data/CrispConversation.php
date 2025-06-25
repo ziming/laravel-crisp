@@ -37,6 +37,5 @@ final class CrispConversation extends Data
 
         public Meta $meta, // object
 
-        public array $segments,
     ) {}
 }
