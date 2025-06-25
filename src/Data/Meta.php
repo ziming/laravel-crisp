@@ -14,7 +14,7 @@ final class Meta extends Data
         public readonly ?string $phone,
         public readonly ?string $address,
         public readonly ?string $subject,
-        public string $origin,
+        public ?string $origin,
         public readonly string $ip,
         public readonly ?Connection $connection,
         public readonly array $data,
