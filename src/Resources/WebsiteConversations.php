@@ -9,7 +9,7 @@ use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
 use Ziming\LaravelCrisp\Data\CrispConversation;
 
-readonly class WebsiteConversations
+final readonly class WebsiteConversations
 {
     public function __construct(private CrispClient $client) {}
 

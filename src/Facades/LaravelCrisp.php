@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Ziming\LaravelCrisp\LaravelCrisp
  */
-class LaravelCrisp extends Facade
+final class LaravelCrisp extends Facade
 {
     protected static function getFacadeAccessor(): string
     {

@@ -17,7 +17,7 @@ use Ziming\LaravelCrisp\Resources\WebsiteSettings;
 use Ziming\LaravelCrisp\Resources\WebsiteVerify;
 use Ziming\LaravelCrisp\Resources\WebsiteVisitors;
 
-class LaravelCrisp
+final class LaravelCrisp
 {
     public CrispClient $client;
 

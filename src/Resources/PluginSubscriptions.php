@@ -8,7 +8,7 @@ use Crisp\CrispClient;
 use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
 
-readonly class PluginSubscriptions
+final readonly class PluginSubscriptions
 {
     public function __construct(private CrispClient $client) {}
 

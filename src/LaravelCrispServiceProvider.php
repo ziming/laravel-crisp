@@ -7,7 +7,7 @@ namespace Ziming\LaravelCrisp;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelCrispServiceProvider extends PackageServiceProvider
+final class LaravelCrispServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
