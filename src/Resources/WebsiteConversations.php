@@ -259,6 +259,7 @@ readonly class WebsiteConversations
      * Bonus Method
      * Get the crisp conversation for a given session.
      * Same as getOne but returns a CrispConversation data object
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
