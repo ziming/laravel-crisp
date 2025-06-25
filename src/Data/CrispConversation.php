@@ -15,7 +15,7 @@ final class CrispConversation extends Data
     public function __construct(
         public string $session_id,
         public string $website_id,
-        public string $inbox_id,
+        public ?string $inbox_id, // will be null if there is no sub inbox
         public string $people_id,
         public string $state,
         public int $status, // alias of state
