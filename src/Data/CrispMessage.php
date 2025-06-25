@@ -7,7 +7,6 @@ namespace Ziming\LaravelCrisp\Data;
 use Carbon\CarbonImmutable;
 use Spatie\LaravelData\Data;
 
-
 /**
  * @internal
  * Not ready for public use yet. Still fine-tuning it
