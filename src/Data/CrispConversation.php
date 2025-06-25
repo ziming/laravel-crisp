@@ -33,7 +33,7 @@ final class CrispConversation extends Data
 
         public array $unread, // object
 
-        public array $assigned, // object,
+        public ?array $assigned, // object,
 
         public Meta $meta, // object
 
