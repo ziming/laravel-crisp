@@ -7,6 +7,7 @@ namespace Ziming\LaravelCrisp\Resources;
 use Crisp\CrispClient;
 use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
+use Ziming\LaravelCrisp\Data\CrispConversation;
 
 readonly class WebsiteConversations
 {
@@ -251,6 +252,20 @@ readonly class WebsiteConversations
             config('crisp.website_id'),
             $sessionId,
             $params
+        );
+    }
+
+    /**
+     * Bonus Method
+     * Get the crisp conversation for a given session.
+     * Same as getOne but returns a CrispConversation data object
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
+    public function getOneCrispConversation(string $sessionId): CrispConversation
+    {
+        return CrispConversation::from(
+            $this->client->websiteConversations->getOne(config('crisp.website_id'), $sessionId)
         );
     }
 
