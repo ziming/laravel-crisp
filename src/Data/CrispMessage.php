@@ -26,7 +26,7 @@ class CrispMessage extends Data
         public readonly string $read,
         public readonly string $delivered,
         public readonly int $fingerprint,
-        public readonly CarbonImmutable $timestamp,
+        public readonly int $timestamp, // Not sure how to get it to work with CarbonImmutable so using int for now
 
         public readonly array $user, // object
     ) {}
