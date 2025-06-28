@@ -239,7 +239,7 @@ final readonly class WebsitePeople
     /**
      * Bonus Method
      * Get the first people ID by search text.
-     *
+     * I may rename this method in the future as it does not feel right to me.
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

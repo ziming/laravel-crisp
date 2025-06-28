@@ -19,7 +19,7 @@ use Ziming\LaravelCrisp\Resources\WebsiteVisitors;
 
 final class LaravelCrisp
 {
-    public CrispClient $client;
+    public CrispClient $officialClient;
 
     public WebsitePeople $websitePeople;
 
@@ -45,24 +45,84 @@ final class LaravelCrisp
 
     public function __construct()
     {
-        $this->client = new CrispClient;
-        $this->client->setTier(config('crisp.tier'));
-        $this->client->authenticate(
+        $this->officialClient = new CrispClient;
+        $this->officialClient->setTier(config('crisp.tier'));
+        $this->officialClient->authenticate(
             config('crisp.access_key_id'),
             config('crisp.secret_access_key')
         );
 
         // Initialize all resource classes
-        $this->websitePeople = new WebsitePeople($this->client);
-        $this->websiteConversations = new WebsiteConversations($this->client);
-        $this->websiteSettings = new WebsiteSettings($this->client);
-        $this->websiteOperators = new WebsiteOperators($this->client);
-        $this->websiteVisitors = new WebsiteVisitors($this->client);
-        $this->websiteAvailability = new WebsiteAvailability($this->client);
-        $this->websiteVerify = new WebsiteVerify($this->client);
-        $this->userProfile = new UserProfile($this->client);
-        $this->pluginSubscriptions = new PluginSubscriptions($this->client);
-        $this->buckets = new Buckets($this->client);
-        $this->website = new Website($this->client);
+        $this->websitePeople = new WebsitePeople($this->officialClient);
+        $this->websiteConversations = new WebsiteConversations($this->officialClient);
+        $this->websiteSettings = new WebsiteSettings($this->officialClient);
+        $this->websiteOperators = new WebsiteOperators($this->officialClient);
+        $this->websiteVisitors = new WebsiteVisitors($this->officialClient);
+        $this->websiteAvailability = new WebsiteAvailability($this->officialClient);
+        $this->websiteVerify = new WebsiteVerify($this->officialClient);
+        $this->userProfile = new UserProfile($this->officialClient);
+        $this->pluginSubscriptions = new PluginSubscriptions($this->officialClient);
+        $this->buckets = new Buckets($this->officialClient);
+        $this->website = new Website($this->officialClient);
+    }
+
+    public function websitePeople(): WebsitePeople
+    {
+        return $this->websitePeople;
+    }
+
+    public function websiteConversations(): WebsiteConversations
+    {
+        return $this->websiteConversations;
+    }
+
+    public function websiteSettings(): WebsiteSettings
+    {
+        return $this->websiteSettings;
+    }
+
+    public function websiteOperators(): WebsiteOperators
+    {
+        return $this->websiteOperators;
+    }
+
+    public function websiteVisitors(): WebsiteVisitors
+    {
+        return $this->websiteVisitors;
+    }
+
+    public function websiteAvailability(): WebsiteAvailability
+    {
+        return $this->websiteAvailability;
+    }
+
+    public function websiteVerify(): WebsiteVerify
+    {
+        return $this->websiteVerify;
+    }
+
+    public function userProfile(): UserProfile
+    {
+        return $this->userProfile;
+    }
+
+    public function pluginSubscriptions(): PluginSubscriptions
+    {
+        return $this->pluginSubscriptions;
+    }
+
+    public function buckets(): Buckets
+    {
+        return $this->buckets;
+    }
+
+    public function website(): Website
+    {
+        return $this->website;
+    }
+
+    public function officialClient(): CrispClient
+    {
+        return $this->officialClient;
     }
 }
