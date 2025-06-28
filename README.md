@@ -64,7 +64,10 @@ $laravelCrisp->websitePeople->findByEmail('abc@example.com');
 \Ziming\LaravelCrisp\Facades\LaravelCrisp::websitePeople()->findByEmail('abc@example.com');
 
 // If for some reason you want to use a different website_id, the official Crisp client is always available too
-$laravelCrisp->officialClient->websitePeople->findByEmail(config('crisp.website_id'), 'abc@example.com');
+$laravelCrisp->officialClient->websitePeople->findByEmail(
+    config('crisp.website_id'), 
+    'abc@example.com'
+);
 ```
 
 The second main difference are extra methods that I think are useful but are not in Crisp official SDK when I 1st
