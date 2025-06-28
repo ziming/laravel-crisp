@@ -88,7 +88,10 @@ $laravelCrisp->websitePeople->getFirstPeopleIdBySearchText('abc@example.com');
 $laravelCrisp->websiteConversations->getOneLastMessage('session-id');
 
 // Gives you a nice DTO object for a crisp conversation. Which give really nice hints to your IDEs
-$laravelCrisp->websiteConversations->getOneCrispConversation('session-id'); // Returns CrispConversation DTO
+$crispConversation = $laravelCrisp->websiteConversations->getOneCrispConversation('session-id');
+
+// Because it is a DTO object, you can access all the various properties of the object with IDE type hinting!
+$crispConversation->is_verified;
 ```
 ## Testing
 
