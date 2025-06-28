@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-crisp/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ziming/laravel-crisp/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-crisp.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-crisp)
 
-Just a simple wrapper for crisp php library for now. More documentation will be added later.
+A laravel Crisp library for Crisp Chat REST API. Still in progress.
 
 ## Support us
 
@@ -71,21 +71,25 @@ $laravelCrisp->officialClient->websitePeople->findByEmail(
 ```
 
 The second main difference are extra methods that I think are useful but are not in Crisp official SDK when I 1st
-added them. For now it is just these 3.
+added them.
 
 ```php
 // Gives you the Crisp Profile Link in Crisp
 \Ziming\LaravelCrisp\Resources\WebsitePeople::getProfileLink('people-id');
 
+// Gives you the conversation link in Crisp
+\Ziming\LaravelCrisp\Resources\WebsiteConversations::getConversationLink('session-id');
+
 // Get the first people id that matches the search text if 1 or more results are returned
 $laravelCrisp = new Ziming\LaravelCrisp();
 $laravelCrisp->websitePeople->getFirstPeopleIdBySearchText('abc@example.com');
 
-// Gives you the conversation link in Crisp
-\Ziming\LaravelCrisp\Resources\WebsiteConversations::getConversationLink('session-id');
+// Get you the last message of a conversation
+$laravelCrisp->websiteConversations->getOneLastMessage('session-id');
 
+// Gives you a nice DTO object for a crisp conversation. Which give really nice hints to your IDEs
+$laravelCrisp->websiteConversations->getOneCrispConversation('session-id'); // Returns CrispConversation DTO
 ```
-
 ## Testing
 
 ```bash
