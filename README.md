@@ -44,7 +44,7 @@ The 1st main difference is that you don't have to set the tier & api credentials
 
 You also do not have to pass in the `website_id` every time.
 
-I hope through the example below, you can see how much more convenient this brings for those of 1 who only have a single
+I hope through the examples below, you can see how much more convenient this brings for those of us who only have a single
 Crisp workspace.
 
 
