@@ -7,9 +7,9 @@
 
 A laravel Crisp library for Crisp Chat REST API. Still in progress.
 
-## Support us
+## Support me
 
-To be added later
+You can donate to my github sponsor.
 
 ## Installation
 
@@ -53,24 +53,30 @@ Crisp workspace.
 use Crisp\CrispClient;
 $officialCrisp = new CrispClient();
 $officialCrisp->setTier('plugin');
-$officialCrisp->authenticate(config('crisp.access_key_id'), config('crisp.secret_access_key'));
+$officialCrisp->authenticate(
+    config('crisp.access_key_id'), 
+    config('crisp.secret_access_key')
+);
+
 $officialCrisp->websitePeople->findByEmail(config('crisp.website_id'), 'abc@example.com');
 
-// This package
+// This Package
 $laravelCrisp = new Ziming\LaravelCrisp();
 $laravelCrisp->websitePeople->findByEmail('abc@example.com');
 
 // If you prefer the laravel facade approach you can just do this
-\Ziming\LaravelCrisp\Facades\LaravelCrisp::websitePeople()->findByEmail('abc@example.com');
+\Ziming\LaravelCrisp\Facades\LaravelCrisp::websitePeople()
+    ->findByEmail('abc@example.com');
 
-// If for some reason you want to use a different website_id, the official Crisp client is always available too
+// If for some reason you want to use a different website_id,
+// the official Crisp client is always available too
 $laravelCrisp->officialClient->websitePeople->findByEmail(
     config('crisp.website_id'), 
     'abc@example.com'
 );
 ```
 
-The second main difference are extra methods that I think are useful but are not in Crisp official SDK when I 1st
+The second main difference is extra methods that I think are useful but are not in Crisp official SDK when I 1st
 added them.
 
 ```php
@@ -90,7 +96,8 @@ $laravelCrisp->websiteConversations->getOneLastMessage('session-id');
 // Gives you a nice DTO object for a crisp conversation. Which give really nice hints to your IDEs
 $crispConversation = $laravelCrisp->websiteConversations->getOneCrispConversation('session-id');
 
-// Because it is a DTO object, you can access all the various properties of the object with IDE type hinting!
+// Because it is a DTO object, you can access all the various properties
+// of the object with IDE hints!
 $crispConversation->is_verified;
 ```
 ## Testing
