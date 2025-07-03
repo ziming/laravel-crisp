@@ -13,6 +13,6 @@ final class Device extends Data
         public readonly ?Geolocation $geolocation,
         public readonly ?System $system,
         public readonly ?int $timezone,
-        public readonly array $locales,
+        public readonly ?array $locales,
     ) {}
 }
