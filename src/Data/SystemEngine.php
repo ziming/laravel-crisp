@@ -9,7 +9,7 @@ use Spatie\LaravelData\Data;
 final class SystemEngine extends Data
 {
     public function __construct(
-        public readonly string $name,
-        public readonly string $version,
+        public readonly ?string $name,
+        public readonly ?string $version,
     ) {}
 }
