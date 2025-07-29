@@ -8,7 +8,8 @@
 A laravel Crisp library for Crisp Chat REST API. Still in progress.
 
 As in, it is used in my production environment, but I do not recommend it for
-others to use on their production yet as I am still fine-tuning the API design.
+others to use on their production yet as I am still fine-tuning the API design
+& creating the various DTOs (still some way to go) for a nicer developer experience
 
 ## Support me
 
