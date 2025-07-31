@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Ziming\LaravelCrisp\Resources;
 
+use Carbon\CarbonInterface;
 use Crisp\CrispClient;
 use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
@@ -246,8 +247,18 @@ final readonly class WebsiteConversations
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function scheduleReminder(string $sessionId, array $params): array
+    public function scheduleReminder(string $sessionId, string|CarbonInterface $date, string $note): array
     {
+        $params = [
+            'note' => $note,
+        ];
+
+        if ($date instanceof CarbonInterface) {
+            $params['date'] = $date->toIso8601String();
+        } else {
+            $params['date'] = $date;
+        }
+
         return $this->client->websiteConversations->scheduleReminder(
             config('crisp.website_id'),
             $sessionId,
