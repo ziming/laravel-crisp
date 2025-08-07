@@ -13,7 +13,10 @@ others to use on their production yet as I am still fine-tuning the API design
 
 ## Support me
 
-You can donate to my github sponsor.
+You can use my [referral link to sign up for Crisp & be a paid customer.](https://crisp.chat/?track=9fH4AdXJwg)
+
+I highly recommend Crisp Chat if you are looking for a chat support SaaS for your business website. As it charges a flat
+monthly fee instead of charging by per seat.
 
 ## Installation
 
