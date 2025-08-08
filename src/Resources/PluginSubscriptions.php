@@ -8,6 +8,9 @@ use Crisp\CrispClient;
 use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
 
+/**
+ * @see https://docs.crisp.chat/references/rest-api/v1/#plugin-subscription
+ */
 final readonly class PluginSubscriptions
 {
     public function __construct(private CrispClient $client) {}
@@ -81,6 +84,7 @@ final readonly class PluginSubscriptions
     }
 
     /**
+     * https://docs.crisp.chat/references/rest-api/v1/#save-subscription-settings
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

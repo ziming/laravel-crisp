@@ -16,8 +16,13 @@ final readonly class Website
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
-    public function create(array $params): array
+    public function create(string $name, string $domain): array
     {
+        $params = [
+            'name' => $name,
+            'domain' => $domain,
+        ];
+
         return $this->client->website->create($params);
     }
 
