@@ -7,7 +7,7 @@ namespace Ziming\LaravelCrisp\Data\Webhooks;
 use Spatie\LaravelData\Data;
 
 /**
- * @internal Not Ready Yet
+ * @internal Not Ready Yet. Do not use!
  */
 final class PluginEvent extends Data
 {
