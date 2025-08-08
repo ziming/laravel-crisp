@@ -79,7 +79,7 @@ $laravelCrisp->officialClient->websitePeople->findByEmail(
 );
 ```
 
-The second main difference is extra methods that I think are useful but are not in Crisp official SDK when I 1st
+The 2nd main difference are extra methods that I think are useful but are not in Crisp official SDK when I 1st
 added them.
 
 ```php
@@ -103,6 +103,19 @@ $crispConversation = $laravelCrisp->websiteConversations->getOneCrispConversatio
 // of the object with IDE hints!
 $crispConversation->is_verified;
 ```
+
+The 3rd main difference is a few methods' signatures are changed to be more user-friendly compared to 
+
+```php
+// The official Crisp PHP sdk takes in a params array, mine takes in the 2 required arguments directly
+$laravelCrisp->websiteConversations->create('website name', 'website.domain');
+
+// The official Crisp PHP sdk takes in a params array, where the date key need to be in ISO 8601 string format,
+// Mine takes in a Carbon instance directly and do the conversion for you. You can also pass in a ISO 8601 string for the $date
+// argument if you prefer.
+$laravelCrisp->websiteConversations->scheduleReminder($sessionId, now()->addDay(), 'Note');
+```
+
 ## Testing
 
 ```bash
