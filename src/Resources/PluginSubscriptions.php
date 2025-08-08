@@ -85,6 +85,7 @@ final readonly class PluginSubscriptions
 
     /**
      * https://docs.crisp.chat/references/rest-api/v1/#save-subscription-settings
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
