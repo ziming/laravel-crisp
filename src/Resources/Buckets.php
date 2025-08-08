@@ -17,6 +17,7 @@ final readonly class Buckets
 
     /**
      * https://docs.crisp.chat/references/rest-api/v1/#bucket-url
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
