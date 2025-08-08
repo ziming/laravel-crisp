@@ -4,7 +4,8 @@
     "keywords": [
         "ziming",
         "laravel",
-        "laravel-crisp"
+        "laravel-crisp",
+        "laravel-crisp-chat"
     ],
     "homepage": "https://github.com/ziming/laravel-crisp",
     "license": "MIT",
@@ -16,9 +17,9 @@
         }
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.2",
         "crispchat/php-crisp-api": "^1.7",
-        "illuminate/contracts": "^10.0||^11.0||^12.0",
+        "illuminate/contracts": "^11.0||^12.0",
         "php-http/guzzle7-adapter": "^1.1",
         "spatie/laravel-data": "^4.17",
         "spatie/laravel-package-tools": "^1.16"
@@ -27,7 +28,7 @@
         "laravel/pint": "^1.14",
         "nunomaduro/collision": "^8.1.1||^7.10.0",
         "larastan/larastan": "^2.9||^3.0",
-        "orchestra/testbench": "^10.0.0||^9.0.0||^8.22.0",
+        "orchestra/testbench": "^10.0.0||^9.0.0",
         "pestphp/pest": "^3.0",
         "pestphp/pest-plugin-arch": "^3.0",
         "pestphp/pest-plugin-laravel": "^3.0",
