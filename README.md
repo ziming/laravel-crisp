@@ -14,6 +14,8 @@ You can use my [referral link to sign up for Crisp Chat. I get a small reward if
 I highly recommend Crisp Chat if you are looking for a chat support SaaS for your business website. As it charges a flat
 monthly fee instead of charging by per seat. It also has a very nice UI, powerful bot builder & healthy plugins ecosystem as well.
 
+Side Note: Looking to send WhatsApp messages with Crisp Chat? Check out my [Laravel Crisp WhatsApp package](https://github.com/ziming/laravel-crisp-whatsapp) too!
+
 ## Installation
 
 You can install the package via composer:
