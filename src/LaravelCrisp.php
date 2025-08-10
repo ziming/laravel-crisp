@@ -50,8 +50,7 @@ final class LaravelCrisp
         ?string $accessKeyId = null,
         #[\SensitiveParameter]
         ?string $secretAccessKey = null,
-    )
-    {
+    ) {
         $this->officialClient = new CrispClient;
         $this->officialClient->setTier(
             $crispTier ?? config('crisp.tier')
