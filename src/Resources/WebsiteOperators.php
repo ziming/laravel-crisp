@@ -10,7 +10,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 final readonly class WebsiteOperators
 {
-    public function __construct(private CrispClient $client) {}
+    public function __construct(private CrispClient $client, private ?string $websiteId = null) {}
 
     /**
      * @throws CrispException
@@ -19,7 +19,7 @@ final readonly class WebsiteOperators
     public function getList(): array
     {
         return $this->client->websiteOperators->getList(
-            config('crisp.website_id')
+            $this->websiteId ?? config('crisp.website_id'),
         );
     }
 
@@ -30,7 +30,7 @@ final readonly class WebsiteOperators
     public function getOne(string $operatorId): array
     {
         return $this->client->websiteOperators->getOne(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $operatorId
         );
     }
@@ -42,7 +42,7 @@ final readonly class WebsiteOperators
     public function deleteOne(string $operatorId): array
     {
         return $this->client->websiteOperators->deleteOne(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $operatorId
         );
     }
@@ -54,7 +54,7 @@ final readonly class WebsiteOperators
     public function updateOne(string $operatorId, array $params): array
     {
         return $this->client->websiteOperators->updateOne(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $operatorId,
             $params
         );

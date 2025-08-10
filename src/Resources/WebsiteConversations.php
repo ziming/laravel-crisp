@@ -12,7 +12,7 @@ use Ziming\LaravelCrisp\Data\CrispConversation;
 
 final readonly class WebsiteConversations
 {
-    public function __construct(private CrispClient $client) {}
+    public function __construct(private CrispClient $client, private ?string $websiteId = null) {}
 
     /**
      * @throws CrispException
@@ -21,7 +21,7 @@ final readonly class WebsiteConversations
     public function findWithSearch(int $pageNumber = 1, string $searchQuery = '', string $searchType = '', string $searchOperator = '', string $includeEmpty = '', string $filterUnread = '', string $filterResolved = '', string $filterNotResolved = '', string $filterMention = '', string $filterAssigned = '', string $filterUnassigned = '', string $filterDateStart = '', string $filterDateEnd = '', string $orderDateCreated = '', string $orderDateUpdated = ''): array
     {
         return $this->client->websiteConversations->findWithSearch(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pageNumber,
             $searchQuery,
             $searchType,
@@ -47,7 +47,7 @@ final readonly class WebsiteConversations
     public function getList(int $pageNumber = 1): array
     {
         return $this->client->websiteConversations->getList(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pageNumber
         );
     }
@@ -70,7 +70,7 @@ final readonly class WebsiteConversations
     public function getOne(string $sessionId): array
     {
         return $this->client->websiteConversations->getOne(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId
         );
     }
@@ -84,7 +84,7 @@ final readonly class WebsiteConversations
     public function deleteOne(string $sessionId): array
     {
         return $this->client->websiteConversations->deleteOne(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId
         );
     }
@@ -98,7 +98,7 @@ final readonly class WebsiteConversations
     public function initiateOne(string $sessionId): array
     {
         return $this->client->websiteConversations->initiateOne(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId
         );
     }
@@ -112,7 +112,7 @@ final readonly class WebsiteConversations
     public function getMessages(string $sessionId, string $timestampBefore = ''): array
     {
         return $this->client->websiteConversations->getMessages(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $timestampBefore
         );
@@ -127,7 +127,7 @@ final readonly class WebsiteConversations
     public function sendMessage(string $sessionId, array $message): array
     {
         return $this->client->websiteConversations->sendMessage(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $message
         );
@@ -142,7 +142,7 @@ final readonly class WebsiteConversations
     public function acknowledgeMessages(string $sessionId, array $read): array
     {
         return $this->client->websiteConversations->acknowledgeMessages(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $read
         );
@@ -157,7 +157,7 @@ final readonly class WebsiteConversations
     public function getRouting(string $sessionId): array
     {
         return $this->client->websiteConversations->getRouting(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId
         );
     }
@@ -169,7 +169,7 @@ final readonly class WebsiteConversations
     public function assignRouting(string $sessionId, array $routing): array
     {
         return $this->client->websiteConversations->assignRouting(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $routing
         );
@@ -182,7 +182,7 @@ final readonly class WebsiteConversations
     public function getMeta(string $sessionId): array
     {
         return $this->client->websiteConversations->getMeta(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId
         );
     }
@@ -194,7 +194,7 @@ final readonly class WebsiteConversations
     public function updateMeta(string $sessionId, array $metas): array
     {
         return $this->client->websiteConversations->updateMeta(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $metas
         );
@@ -207,7 +207,7 @@ final readonly class WebsiteConversations
     public function getOriginalMessage(string $sessionId, string $originalId): array
     {
         return $this->client->websiteConversations->getOriginalMessage(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $originalId
         );
@@ -224,7 +224,7 @@ final readonly class WebsiteConversations
     public function setState(string $sessionId, string $state): array
     {
         return $this->client->websiteConversations->setState(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $state
         );
@@ -237,7 +237,7 @@ final readonly class WebsiteConversations
     public function setBlock(string $sessionId, bool $blocked = true): array
     {
         return $this->client->websiteConversations->setBlock(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $blocked
         );
@@ -260,7 +260,7 @@ final readonly class WebsiteConversations
         }
 
         return $this->client->websiteConversations->scheduleReminder(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId,
             $params
         );
@@ -277,7 +277,7 @@ final readonly class WebsiteConversations
     public function getOneCrispConversation(string $sessionId): CrispConversation
     {
         return CrispConversation::from(
-            $this->client->websiteConversations->getOne(config('crisp.website_id'), $sessionId)
+            $this->client->websiteConversations->getOne($this->websiteId ?? config('crisp.website_id'), $sessionId)
         );
     }
 
@@ -291,7 +291,7 @@ final readonly class WebsiteConversations
     public function getOneLastMessage(string $sessionId): string
     {
         $getOneResponse = $this->client->websiteConversations->getOne(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $sessionId
         );
 
@@ -302,9 +302,9 @@ final readonly class WebsiteConversations
      * Bonus Method
      * Get the conversation link for a given session.
      */
-    public static function getConversationLink(string $sessionId): string
+    public static function getConversationLink(string $sessionId, ?string $websiteId = null): string
     {
-        $websiteId = config('crisp.website_id');
+        $websiteId = $websiteId ?? config('crisp.website_id');
 
         return "https://app.crisp.chat/website/{$websiteId}/inbox/{$sessionId}/";
     }

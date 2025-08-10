@@ -13,7 +13,7 @@ use Psr\Http\Client\ClientExceptionInterface;
  */
 final readonly class PluginSubscriptions
 {
-    public function __construct(private CrispClient $client) {}
+    public function __construct(private CrispClient $client, private ?string $websiteId = null) {}
 
     /**
      * @throws CrispException
@@ -31,7 +31,7 @@ final readonly class PluginSubscriptions
     public function listSubscriptionsForWebsite(): array
     {
         return $this->client->pluginSubscriptions->listSubscriptionsForWebsite(
-            config('crisp.website_id')
+            $this->websiteId ?? config('crisp.website_id'),
         );
     }
 
@@ -42,7 +42,7 @@ final readonly class PluginSubscriptions
     public function getSubscriptionDetails(string $pluginId): array
     {
         return $this->client->pluginSubscriptions->getSubscriptionDetails(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pluginId
         );
     }
@@ -54,7 +54,7 @@ final readonly class PluginSubscriptions
     public function subscribeWebsiteToPlugin(string $pluginId): array
     {
         return $this->client->pluginSubscriptions->subscribeWebsiteToPlugin(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pluginId
         );
     }
@@ -66,7 +66,7 @@ final readonly class PluginSubscriptions
     public function unsubscribePluginFromWebsite(string $pluginId): array
     {
         return $this->client->pluginSubscriptions->unsubscribePluginFromWebsite(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pluginId
         );
     }
@@ -78,7 +78,7 @@ final readonly class PluginSubscriptions
     public function getSubscriptionSettings(string $pluginId): array
     {
         return $this->client->pluginSubscriptions->getSubscriptionSettings(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pluginId
         );
     }
@@ -92,7 +92,7 @@ final readonly class PluginSubscriptions
     public function saveSubscriptionSettings(string $pluginId, array $settings): array
     {
         return $this->client->pluginSubscriptions->saveSubscriptionSettings(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pluginId,
             $settings
         );

@@ -10,7 +10,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 final readonly class WebsitePeople
 {
-    public function __construct(private CrispClient $client) {}
+    public function __construct(private CrispClient $client, private ?string $websiteId = null) {}
 
     /**
      * @throws CrispException
@@ -19,7 +19,7 @@ final readonly class WebsitePeople
     public function findByEmail(string $email): array
     {
         return $this->client->websitePeople->findByEmail(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $email
         );
     }
@@ -31,7 +31,7 @@ final readonly class WebsitePeople
     public function findWithSearchText(string $searchText): array
     {
         return $this->client->websitePeople->findWithSearchText(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $searchText
         );
     }
@@ -43,7 +43,7 @@ final readonly class WebsitePeople
     public function createNewPeopleProfile(array $params): array
     {
         return $this->client->websitePeople->createNewPeopleProfile(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $params
         );
     }
@@ -55,7 +55,7 @@ final readonly class WebsitePeople
     public function checkPeopleProfileExists(string $peopleId): bool
     {
         return $this->client->websitePeople->checkPeopleProfileExists(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId
         );
     }
@@ -67,7 +67,7 @@ final readonly class WebsitePeople
     public function getPeopleProfile(string $peopleId): array
     {
         return $this->client->websitePeople->getPeopleProfile(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId
         );
     }
@@ -79,7 +79,7 @@ final readonly class WebsitePeople
     public function listPeopleProfiles(int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleProfiles(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pageNumber
         );
     }
@@ -91,7 +91,7 @@ final readonly class WebsitePeople
     public function removePeopleProfile(string $peopleId): array
     {
         return $this->client->websitePeople->removePeopleProfile(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId
         );
     }
@@ -103,7 +103,7 @@ final readonly class WebsitePeople
     public function savePeopleProfile(string $peopleId, array $data): array
     {
         return $this->client->websitePeople->savePeopleProfile(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $data
         );
@@ -116,7 +116,7 @@ final readonly class WebsitePeople
     public function updatePeopleProfile(string $peopleId, array $data): array
     {
         return $this->client->websitePeople->updatePeopleProfile(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $data
         );
@@ -129,7 +129,7 @@ final readonly class WebsitePeople
     public function listPeopleSegments(int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleSegments(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pageNumber
         );
     }
@@ -141,7 +141,7 @@ final readonly class WebsitePeople
     public function listPeopleConversations(string $peopleId, int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleConversations(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $pageNumber
         );
@@ -154,7 +154,7 @@ final readonly class WebsitePeople
     public function addPeopleEvent(string $peopleId, array $data): array
     {
         return $this->client->websitePeople->addPeopleEvent(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $data,
         );
@@ -167,7 +167,7 @@ final readonly class WebsitePeople
     public function listPeopleEvents(string $peopleId, int $pageNumber = 1): array
     {
         return $this->client->websitePeople->listPeopleEvent(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $pageNumber
         );
@@ -180,7 +180,7 @@ final readonly class WebsitePeople
     public function getPeopleData(string $peopleId): array
     {
         return $this->client->websitePeople->getPeopleData(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId
         );
     }
@@ -192,7 +192,7 @@ final readonly class WebsitePeople
     public function savePeopleData(string $peopleId, array $data): array
     {
         return $this->client->websitePeople->savePeopleData(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $data
         );
@@ -205,7 +205,7 @@ final readonly class WebsitePeople
     public function updatePeopleData(string $peopleId, array $data): array
     {
         return $this->client->websitePeople->updatePeopleData(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $data
         );
@@ -218,7 +218,7 @@ final readonly class WebsitePeople
     public function getPeopleSubscriptionStatus(string $peopleId): array
     {
         return $this->client->websitePeople->getPeopleSubscriptionStatus(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId
         );
     }
@@ -230,7 +230,7 @@ final readonly class WebsitePeople
     public function updatePeopleSubscriptionStatus(string $peopleId, array $data): array
     {
         return $this->client->websitePeople->updatePeopleSubscriptionStatus(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $peopleId,
             $data
         );
@@ -247,7 +247,7 @@ final readonly class WebsitePeople
     public function getFirstPeopleIdBySearchText(string $searchText): ?string
     {
         $people = $this->client->websitePeople->findWithSearchText(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $searchText
         );
 
@@ -258,8 +258,10 @@ final readonly class WebsitePeople
      * Bonus Method
      * Get the profile link for a given people ID.
      */
-    public static function getProfileLink(string $peopleId): string
+    public static function getProfileLink(string $peopleId, ?string $websiteId = null): string
     {
-        return 'https://app.crisp.chat/website/'.config('crisp.website_id')."/contacts/profile/{$peopleId}";
+        $websiteId = $websiteId ?? config('crisp.website_id');
+
+        return "https://app.crisp.chat/website/{$websiteId}/contacts/profile/{$peopleId}";
     }
 }

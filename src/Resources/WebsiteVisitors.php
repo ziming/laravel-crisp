@@ -10,7 +10,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 final readonly class WebsiteVisitors
 {
-    public function __construct(private CrispClient $client) {}
+    public function __construct(private CrispClient $client, private ?string $websiteId) {}
 
     /**
      * @throws CrispException
@@ -19,7 +19,7 @@ final readonly class WebsiteVisitors
     public function listVisitors(int $pageNumber = 1): array
     {
         return $this->client->websiteVisitors->listVisitors(
-            config('crisp.website_id'),
+            $this->websiteId ?? config('crisp.website_id'),
             $pageNumber
         );
     }

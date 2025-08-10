@@ -10,7 +10,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 
 final readonly class WebsiteAvailability
 {
-    public function __construct(private CrispClient $client) {}
+    public function __construct(private CrispClient $client, private ?string $websiteId) {}
 
     /**
      * @throws CrispException
@@ -19,7 +19,7 @@ final readonly class WebsiteAvailability
     public function getAvailabilityStatus(): array
     {
         return $this->client->websiteAvailability->getAvailabilityStatus(
-            config('crisp.website_id')
+            $this->websiteId ?? config('crisp.website_id'),
         );
     }
 
@@ -30,7 +30,7 @@ final readonly class WebsiteAvailability
     public function listOperatorAvailabilities(): array
     {
         return $this->client->websiteAvailability->listOperatorAvailabilities(
-            config('crisp.website_id')
+            $this->websiteId ?? config('crisp.website_id'),
         );
     }
 }

@@ -43,25 +43,34 @@ final class LaravelCrisp
 
     public Website $website;
 
-    public function __construct()
+    public function __construct(
+        ?string $websiteId = null,
+        ?string $crispTier = null,
+        #[\SensitiveParameter]
+        ?string $accessKeyId = null,
+        #[\SensitiveParameter]
+        ?string $secretAccessKey = null,
+    )
     {
         $this->officialClient = new CrispClient;
-        $this->officialClient->setTier(config('crisp.tier'));
+        $this->officialClient->setTier(
+            $crispTier ?? config('crisp.tier')
+        );
         $this->officialClient->authenticate(
-            config('crisp.access_key_id'),
-            config('crisp.secret_access_key')
+            $accessKeyId ?? config('crisp.access_key_id'),
+            $secretAccessKey ?? config('crisp.secret_access_key')
         );
 
         // Initialize all resource classes
-        $this->websitePeople = new WebsitePeople($this->officialClient);
-        $this->websiteConversations = new WebsiteConversations($this->officialClient);
-        $this->websiteSettings = new WebsiteSettings($this->officialClient);
-        $this->websiteOperators = new WebsiteOperators($this->officialClient);
-        $this->websiteVisitors = new WebsiteVisitors($this->officialClient);
-        $this->websiteAvailability = new WebsiteAvailability($this->officialClient);
-        $this->websiteVerify = new WebsiteVerify($this->officialClient);
+        $this->websitePeople = new WebsitePeople($this->officialClient, $websiteId);
+        $this->websiteConversations = new WebsiteConversations($this->officialClient, $websiteId);
+        $this->websiteSettings = new WebsiteSettings($this->officialClient, $websiteId);
+        $this->websiteOperators = new WebsiteOperators($this->officialClient, $websiteId);
+        $this->websiteVisitors = new WebsiteVisitors($this->officialClient, $websiteId);
+        $this->websiteAvailability = new WebsiteAvailability($this->officialClient, $websiteId);
+        $this->websiteVerify = new WebsiteVerify($this->officialClient, $websiteId);
         $this->userProfile = new UserProfile($this->officialClient);
-        $this->pluginSubscriptions = new PluginSubscriptions($this->officialClient);
+        $this->pluginSubscriptions = new PluginSubscriptions($this->officialClient, $websiteId);
         $this->buckets = new Buckets($this->officialClient);
         $this->website = new Website($this->officialClient);
     }
