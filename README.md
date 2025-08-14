@@ -5,16 +5,16 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-crisp/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ziming/laravel-crisp/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-crisp.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-crisp)
 
-A laravel Crisp library for Crisp Chat REST API.
+A laravel Crisp library for Crisp Chat API.
 
 ## Support me
 
 You can use my [referral link to sign up for Crisp Chat. I get a small reward if you upgrade to the Essentials or Plus Plan in the future.](https://crisp.chat/?track=9fH4AdXJwg)
 
 I highly recommend Crisp Chat if you are looking for a chat support SaaS for your business website. As it charges a flat
-monthly fee instead of charging by per seat.
+monthly fee per workspace instead of charging by per seat.
 
-At the Essentials Plan level & above, you also get features like: Sites Monitoring, Status Pages, Bot Builder, Knowledge Base, WhatsApp Integration, & more!
+At the Essentials Plan level & above, you also get features like: Sites Monitoring, Status Pages, AI Bot Builder, Knowledge Base, WhatsApp Integration, Email Campaigns & more!
 
 Side Note: Looking to send WhatsApp messages with Crisp Chat? Check out my [Laravel Crisp WhatsApp package](https://github.com/ziming/laravel-crisp-whatsapp) too!
 
