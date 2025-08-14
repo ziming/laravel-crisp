@@ -54,6 +54,9 @@ You also do not have to pass in the `website_id` every time.
 I hope through the examples below, you can see how much more convenient this brings for those of us who only have a single
 Crisp workspace.
 
+But 1st you need to create your plugin at the [Crisp Marketplace](https://marketplace.crisp.chat/) 1st.
+
+With that done, you may continue with the examples below.
 
 ```php
 // Official PHP Crisp SDK
