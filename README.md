@@ -9,10 +9,12 @@ A laravel Crisp library for Crisp Chat REST API.
 
 ## Support me
 
-You can use my [referral link to sign up for Crisp Chat. I get a small reward if you become a paid customer at the Essentials or Plus Plan later.](https://crisp.chat/?track=9fH4AdXJwg)
+You can use my [referral link to sign up for Crisp Chat. I get a small reward if you upgrade to the Essentials or Plus Plan in the future.](https://crisp.chat/?track=9fH4AdXJwg)
 
 I highly recommend Crisp Chat if you are looking for a chat support SaaS for your business website. As it charges a flat
-monthly fee instead of charging by per seat. It also has a very nice UI, powerful bot builder & healthy plugins ecosystem as well.
+monthly fee instead of charging by per seat.
+
+At the Essentials Plan level & above, you also get features like: Sites Monitoring, Status Pages, Bot Builder, Knowledge Base, WhatsApp Integration, & more!
 
 Side Note: Looking to send WhatsApp messages with Crisp Chat? Check out my [Laravel Crisp WhatsApp package](https://github.com/ziming/laravel-crisp-whatsapp) too!
 
