@@ -98,7 +98,7 @@ added them.
 
 // Get the first people id that matches the search text if 1 or more results are returned
 $laravelCrisp = new Ziming\LaravelCrisp();
-$laravelCrisp->websitePeople->getFirstPeopleIdBySearchText('abc@example.com');
+$laravelCrisp->websitePeople->getFirstPeopleIdBySearchText('SomePhoneNumber');
 
 // Get you the last message of a conversation
 $laravelCrisp->websiteConversations->getOneLastMessage('session-id');
