@@ -90,17 +90,17 @@ The 2nd main difference are extra methods that I think are useful but are not in
 added them.
 
 ```php
-// Gives you the Crisp Profile Link in Crisp
+// Gives you the Crisp Profile Link in Crisp. You can put it in your laravel admin to easier go to the customer profile in Crisp for example.
 \Ziming\LaravelCrisp\Resources\WebsitePeople::getProfileLink('people-id');
 
-// Gives you the conversation link in Crisp
+// Gives you the conversation link in Crisp. You can put it in your laravel admin to easier go to the customer chat in Crisp for example.
 \Ziming\LaravelCrisp\Resources\WebsiteConversations::getConversationLink('session-id');
 
 // Get the first people id that matches the search text if 1 or more results are returned
 $laravelCrisp = new Ziming\LaravelCrisp();
-$laravelCrisp->websitePeople->getFirstPeopleIdBySearchText('SomePhoneNumber');
+$laravelCrisp->websitePeople->getFirstPeopleIdBySearchText('Some Phone Number as Crisp does not have an exact filter by phone feature yet (but coming soon)');
 
-// Get you the last message of a conversation
+// Get you the last message of a conversation to show in admin for example
 $laravelCrisp->websiteConversations->getOneLastMessage('session-id');
 
 // Gives you a nice DTO object for a crisp conversation. Which give really nice hints to your IDEs
@@ -119,7 +119,7 @@ $laravelCrisp->websiteConversations->create('website name', 'website.domain');
 
 // The official Crisp PHP sdk takes in a params array, where the date key need to be in ISO 8601 string format,
 // Mine takes in a Carbon instance directly and do the conversion for you. You can also pass in a ISO 8601 string for the $date
-// argument if you prefer.
+// argument if you prefer. You can use this to send a reminder to your customer via Crisp Chat for example
 $laravelCrisp->websiteConversations->scheduleReminder($sessionId, now()->addDay(), 'Note');
 ```
 
