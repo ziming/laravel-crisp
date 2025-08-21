@@ -56,7 +56,7 @@ Crisp workspace.
 
 But 1st you need to create your plugin at the [Crisp Marketplace](https://marketplace.crisp.chat/) 1st.
 
-With that done, you may continue with the examples below.
+With that done, you may continue with the examples below or check out the source code in the [src/Resources folder](https://github.com/ziming/laravel-crisp/tree/main/src/Resources).
 
 ```php
 // Official PHP Crisp SDK
