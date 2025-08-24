@@ -5,7 +5,15 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-crisp/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ziming/laravel-crisp/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-crisp.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-crisp)
 
-A laravel Crisp library for Crisp Chat API.
+A laravel Crisp library for [Crisp Chat](https://github.com/ziming/laravel-crisp-whatsapp) API.
+
+Some example of things you can more easily do with this library:
+
+- Showing your customer last Crisp chat message in your own admin, which you can then click on to go straight to their profile or chat in Crisp
+- A cron job to delete very old messages from your Crisp workspace
+- A free/paid plugin in the Crisp Marketplace
+- Schedule reminders to your customers via Crisp Chat
+- and much more!
 
 ## Support Me
 
