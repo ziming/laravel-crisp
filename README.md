@@ -13,6 +13,7 @@ Some example of things you can more easily do with this library:
 - A cron job to delete very old messages from your Crisp workspace
 - A free/paid plugin in the Crisp Marketplace
 - Schedule reminders to your customers via Crisp Chat
+- Build your own chat bot to reply to your customers on Crisp Chat
 - and much more!
 
 ## Support Me
