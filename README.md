@@ -18,7 +18,7 @@ Some example of things you can more easily do with this library:
 
 ## Support Me
 
-You can use my [referral link to sign up for Crisp Chat. I get a small reward if you upgrade to the Essentials or Plus Plan in the future.](https://crisp.chat/?track=9fH4AdXJwg)
+You can use my [referral link to sign up for a Crisp Chat free account. I get a small reward if you upgrade to the Essentials or Plus Plan in the future.](https://crisp.chat/?track=9fH4AdXJwg)
 
 I highly recommend Crisp Chat if you are looking for a chat support SaaS for your website. As it charges a flat
 monthly fee per workspace instead of charging by per seat.
