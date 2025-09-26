@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ziming/laravel-crisp/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ziming/laravel-crisp/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ziming/laravel-crisp.svg?style=flat-square)](https://packagist.org/packages/ziming/laravel-crisp)
 
-A laravel Crisp library for [Crisp Chat](https://github.com/ziming/laravel-crisp-whatsapp) API.
+A laravel Crisp library for [Crisp Chat](https://crisp.chat/?track=9fH4AdXJwg) API.
 
 Some example of things you can more easily do with this library:
 
