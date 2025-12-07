@@ -7,6 +7,8 @@ namespace Ziming\LaravelCrisp\Resources;
 use Crisp\CrispClient;
 use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Message\ResponseInterface;
+
 
 final readonly class WebsitePeople
 {
@@ -34,6 +36,25 @@ final readonly class WebsitePeople
             $this->websiteId ?? config('crisp.website_id'),
             $searchText
         );
+    }
+
+    /**
+     *  Bonus Method
+     *  Get list of people profiles that matches the search filter
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
+    public function findWithSearchFilter(array $searchFilter): array
+    {
+        $websiteId = $this->websiteId ?? config('crisp.website_id');
+
+        $result = $this->client->get(
+            "website/{$websiteId}/people/profiles?search_filter=". urlencode(
+                json_encode($searchFilter)
+            )
+        );
+
+        return $this->formatResponse($result);
     }
 
     /**
@@ -256,6 +277,23 @@ final readonly class WebsitePeople
 
     /**
      * Bonus Method
+     * Get the first people ID by search filter.
+     * I may rename this method in the future as it does not feel right to me.
+     *
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
+    public function getFirstPeopleIdBySearchFilter(array $searchFilter): ?string
+    {
+        $people = $this->findWithSearchFilter(
+            $searchFilter,
+        );
+
+        return $people[0]['people_id'] ?? null;
+    }
+
+    /**
+     * Bonus Method
      * Get the profile link for a given people ID.
      */
     public static function getProfileLink(string $peopleId, ?string $websiteId = null): string
@@ -263,5 +301,20 @@ final readonly class WebsitePeople
         $websiteId = $websiteId ?? config('crisp.website_id');
 
         return "https://app.crisp.chat/website/{$websiteId}/contacts/profile/{$peopleId}";
+    }
+
+
+    /**
+     * Basically copied from Crisp own Resource class
+     * @throws CrispException
+     */
+    protected function formatResponse(ResponseInterface $response): array
+    {
+        $responseData = json_decode($response->getBody()->getContents(), true);
+
+        if ($response->getStatusCode() >= 400) {
+            throw new CrispException($response->getStatusCode(), $responseData);
+        }
+        return $responseData["data"];
     }
 }
