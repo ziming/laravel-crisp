@@ -9,7 +9,6 @@ use Crisp\CrispException;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 
-
 final readonly class WebsitePeople
 {
     public function __construct(private CrispClient $client, private ?string $websiteId = null) {}
@@ -41,6 +40,7 @@ final readonly class WebsitePeople
     /**
      *  Bonus Method
      *  Get list of people profiles that matches the search filter
+     *
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -49,7 +49,7 @@ final readonly class WebsitePeople
         $websiteId = $this->websiteId ?? config('crisp.website_id');
 
         $result = $this->client->get(
-            "website/{$websiteId}/people/profiles?search_filter=". urlencode(
+            "website/{$websiteId}/people/profiles?search_filter=".urlencode(
                 json_encode($searchFilter)
             )
         );
@@ -303,9 +303,9 @@ final readonly class WebsitePeople
         return "https://app.crisp.chat/website/{$websiteId}/contacts/profile/{$peopleId}";
     }
 
-
     /**
      * Basically copied from Crisp own Resource class
+     *
      * @throws CrispException
      */
     protected function formatResponse(ResponseInterface $response): array
@@ -315,6 +315,7 @@ final readonly class WebsitePeople
         if ($response->getStatusCode() >= 400) {
             throw new CrispException($response->getStatusCode(), $responseData);
         }
-        return $responseData["data"];
+
+        return $responseData['data'];
     }
 }
