@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-crisp` will be documented in this file.
 
+## 1.1.3 - 2026-01-25
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/ziming/laravel-crisp/pull/7
+
+**Full Changelog**: https://github.com/ziming/laravel-crisp/compare/1.1.2...1.1.3
+
 ## Bump Github Actions - 2025-12-07
 
 ### What's Changed
