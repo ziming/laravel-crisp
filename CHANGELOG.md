@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-crisp` will be documented in this file.
 
+## Unreleased
+
+### What's Changed
+
+* Add Laravel 13 support
+
 ## 1.1.3 - 2026-01-25
 
 ### What's Changed
